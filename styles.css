@@ -1,0 +1,27 @@
+/*
+  Styles for MD Beautify Obsidian Plugin
+*/
+
+.md-beautify-ribbon-class {
+  color: #07c160;
+}
+
+.md-beautify-status-bar-active {
+  color: #07c160;
+  font-weight: bold;
+}
+
+/* Modal styles if needed */
+.md-beautify-modal {
+  max-width: 600px;
+}
+
+.md-beautify-preview-container {
+  padding: 20px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
