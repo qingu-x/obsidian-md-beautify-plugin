@@ -1,0 +1,90 @@
+/*
+  Styles for MD Beautify Obsidian Plugin
+*/
+
+.md-beautify-ribbon-class {
+  color: #07c160;
+}
+
+.md-beautify-status-bar-active {
+  color: #07c160;
+  font-weight: bold;
+}
+
+/* Modal styles if needed */
+.md-beautify-modal {
+  max-width: 600px;
+}
+
+.md-beautify-preview-container {
+  padding: 20px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ========================================
+   Web 基础样式同步
+   ======================================== */
+
+/* 确保斜体样式生效 */
+#wemd em {
+  font-style: italic !important;
+  font-synthesis: style;
+}
+
+/* 强制图片自适应，但允许通过属性覆盖高度 */
+#wemd img {
+  max-width: 100% !important;
+  /* height: auto !important; */
+  display: block;
+  margin: 10px auto;
+}
+
+/* 仅当未指定 height 属性时，才强制高度自适应以保持比例 */
+#wemd img:not([height]) {
+  height: auto !important;
+}
+
+/* 针对整个预览容器启用字体合成 */
+#wemd {
+  font-synthesis: style weight;
+  background-color: inherit;
+}
+
+/* ========================================
+   深色模式支持 (Web 方式)
+   ======================================== */
+
+.wemd-dark-mode,
+[data-ui-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* 当处于深色模式时，确保背景色正确 */
+.wemd-dark-mode#wemd,
+[data-ui-theme="dark"]#wemd {
+  background-color: #191919; /* 微信深色模式背景色 */
+}
+
+/* 如果用户希望完全跟随 Obsidian 主题，可以使用下面的变量 */
+.theme-dark .wemd-dark-mode#wemd {
+  background-color: var(--background-primary);
+}
+
+#wemd pre.custom::before {
+  display: none !important;
+}
+
+#wemd pre.custom code {
+  padding-top: 16px !important;
+  font-family:
+    Operator Mono,
+    Consolas,
+    Monaco,
+    Menlo,
+    monospace;
+}
