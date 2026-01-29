@@ -1,0 +1,622 @@
+/*
+  Styles for MD Beautify Obsidian Plugin
+  All styles are scoped with .mdb-* or #mdb prefixes
+  to prevent interference with Obsidian's global styles
+*/
+
+.mdb-ribbon-class {
+  color: #07c160;
+}
+
+.mdb-status-bar-active {
+  color: #07c160;
+  font-weight: bold;
+}
+
+.mdb-modal {
+  max-width: 600px;
+}
+
+.mdb-preview-container {
+  padding: 20px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ========================================
+   #mdb 预览容器样式
+   ======================================== */
+
+#mdb {
+  font-synthesis: style weight;
+  background-color: inherit;
+  overflow-wrap: break-word;
+}
+
+#mdb a {
+  word-break: break-all;
+}
+
+#mdb em {
+  font-style: italic !important;
+  font-synthesis: style;
+}
+
+#mdb img {
+  max-width: 100%;
+  display: block;
+  margin: 10px auto;
+  border: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+
+#mdb img:not([height]) {
+  height: auto;
+}
+
+#mdb pre {
+  margin: 10px 0;
+  position: relative;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#mdb pre.custom::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow:
+    20px 0 0 #ffbd2e,
+    40px 0 0 #27c93f;
+  z-index: 10;
+}
+
+#mdb pre code {
+  display: block;
+  font-family:
+    Operator Mono,
+    Consolas,
+    Monaco,
+    Menlo,
+    monospace;
+  font-size: 12px;
+  white-space: pre;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+}
+
+#mdb pre code span {
+  line-height: 26px;
+}
+
+#mdb pre.custom code {
+  padding: 36px 16px 16px;
+}
+
+.mdb-view-controls .setting-item {
+  margin: 0;
+}
+/* ========================================
+   深色模式支持
+   ======================================== */
+
+.mdb-dark-mode,
+[data-ui-theme="dark"] {
+  color-scheme: dark;
+}
+
+.mdb-dark-mode#mdb,
+[data-ui-theme="dark"]#mdb {
+  background-color: #191919;
+}
+
+[data-ui-theme="dark"] .mdb-dark-mode#mdb {
+  background-color: var(--background-primary);
+}
+
+/* Mermaid 样式 */
+#mdb svg .label text,
+#mdb svg span,
+#mdb svg .nodeLabel,
+#mdb svg .edgeLabel {
+  fill: inherit;
+  color: inherit;
+}
+
+/* KaTeX 数学公式样式 */
+#mdb .katex {
+  font-size: 1.1em;
+}
+
+#mdb .katex-display {
+  margin: 1em 0;
+  text-align: center;
+}
+
+/* 预览状态消息 */
+.mdb-view-preview-content .mdb-preview-empty {
+  color: #666;
+  text-align: center;
+  padding: 20px;
+}
+
+.mdb-view-preview-content .mdb-preview-error {
+  color: red;
+  padding: 20px;
+}
+
+#mdb .setting-item {
+  margin-bottom: 0;
+}
+
+/* 旋转按钮样式 */
+.mdb-rotate-btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mdb-rotate-btn:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.mdb-rotate-btn.mdb-hidden {
+  display: none;
+}
+
+.mdb-sync-scroll-btn.active,
+.mdb-rotate-btn.active {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.mdb-sync-scroll-btn.active:hover,
+.mdb-rotate-btn.active:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* 按钮旋转动画 */
+.mdb-sync-scroll-btn svg,
+.mdb-rotate-btn svg {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.mdb-sync-scroll-btn.active svg,
+.mdb-rotate-btn.active svg {
+  transform: rotate(90deg);
+}
+
+/* 预览内容边框和阴影 */
+.mdb-view-preview-content {
+  background-color: white;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 36px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  overflow: auto;
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+  transform-origin: center top;
+}
+
+.mdb-view-preview-content::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.mdb-view-preview-content::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+  border-radius: 0 8px 8px 0;
+}
+
+.mdb-view-preview-content::-webkit-scrollbar-track:horizontal {
+  border-radius: 0 0 8px 8px;
+}
+
+.mdb-view-preview-content::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: 6px;
+  border: 3px solid var(--background-secondary);
+  background-clip: content-box;
+}
+
+.mdb-view-preview-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+.mdb-view-preview-content::-webkit-scrollbar-corner {
+  background: var(--background-secondary);
+  border-radius: 0 0 8px 0;
+}
+
+/* 深色模式下的预览边框 */
+[data-ui-theme="dark"] .mdb-view-preview-content {
+  border-color: var(--background-modifier-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  background-color: #0f1113;
+}
+
+/* 预览视图容器 */
+.mdb-preview-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 控制栏 */
+.mdb-view-controls {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+/* 控制栏行 */
+.mdb-controls-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.mdb-controls-row .mod-cta {
+  flex: 1;
+}
+
+.mdb-controls-selectors-row,
+.mdb-controls-device-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 4px;
+  width: 100%;
+}
+
+.mdb-controls-selectors-row.mdb-hidden,
+.mdb-controls-device-row.mdb-hidden,
+.mdb-scale-slider.mdb-hidden {
+  display: none;
+}
+
+/* 控制项容器 */
+.mdb-control-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.mdb-control-container.mdb-scale-control {
+  flex: 0.8;
+}
+
+.mdb-control-container > span {
+  font-size: 12px;
+}
+
+.mdb-control-container .setting-item {
+  width: 100%;
+  border: none;
+  padding: 0;
+  flex: 1;
+}
+
+.mdb-control-container .setting-item-control {
+  width: 100%;
+}
+
+.mdb-control-container select {
+  width: 100%;
+}
+
+/* 缩放滑块 */
+.mdb-scale-slider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.mdb-scale-slider input[type="range"] {
+  flex: 1;
+}
+
+.mdb-scale-slider .mdb-scale-label {
+  font-size: 12px;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* 滚动容器 */
+.mdb-view-preview-scroll {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--background-primary);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* 复制临时容器 */
+.mdb-copy-temp {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 800px;
+}
+
+/* Mermaid 包装器样式 */
+#mdb .mermaid-wrapper {
+  isolation: isolate;
+  text-align: center;
+}
+
+#mdb .mermaid-wrapper .mdb-mermaid-svg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  contain: layout style paint;
+}
+
+[data-ui-theme="light"] #mdb .mermaid-wrapper {
+  color-scheme: light;
+}
+
+/* Mermaid 亮色主题样式 */
+#mdb .mdb-mermaid-light {
+  color-scheme: light;
+}
+
+#mdb .mdb-mermaid-light * {
+  color-scheme: light;
+}
+
+#mdb .mdb-mermaid-light .node rect,
+#mdb .mdb-mermaid-light .node circle,
+#mdb .mdb-mermaid-light .node ellipse,
+#mdb .mdb-mermaid-light .node polygon,
+#mdb .mdb-mermaid-light .node path {
+  fill: #fff4dd;
+  stroke: #000;
+}
+
+#mdb .mdb-mermaid-light .label text,
+#mdb .mdb-mermaid-light .label span,
+#mdb .mdb-mermaid-light .nodeLabel,
+#mdb .mdb-mermaid-light .edgeLabel {
+  fill: #000;
+  color: #000;
+}
+
+#mdb .mdb-mermaid-light .flowchart-link,
+#mdb .mdb-mermaid-light .edgePath .path {
+  stroke: #000;
+}
+
+#mdb .mdb-mermaid-light .marker {
+  fill: #000;
+  stroke: #000;
+}
+
+#mdb .mdb-mermaid-light .cluster rect {
+  fill: #fff9ed;
+  stroke: #000;
+}
+
+/* Mermaid 错误提示 */
+#mdb .mermaid-error {
+  color: #c62828;
+  background: rgba(198, 40, 40, 0.08);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* 主题列表 */
+.mdb-list-title {
+  margin-bottom: 10px;
+}
+
+.mdb-theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mdb-theme-list.mdb-empty {
+  display: none;
+}
+
+/* 主题管理弹窗 */
+.mdb-theme-manager-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+}
+
+.mdb-theme-manager-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.mdb-theme-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+.mdb-theme-list-item button {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* 设置页面 */
+.mdb-settings-header {
+  margin-bottom: 20px;
+}
+
+.mdb-settings-content {
+  margin-top: 20px;
+}
+
+.mdb-theme-actions {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.mdb-theme-editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 70vh;
+  max-height: 600px;
+  min-height: 400px;
+  margin-top: 20px;
+}
+
+.mdb-theme-editor-container .mdb-editor-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mdb-editor-section textarea {
+  flex: 1;
+  width: 100%;
+  resize: none;
+  font-family: var(--font-monospace);
+}
+
+.mdb-editor-preview {
+  flex: 1;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background-color: var(--background-primary);
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mdb-editor-preview .mdb-preview-wrapper {
+  padding: 20px;
+  flex: 1;
+  min-height: 100%;
+}
+
+.mdb-editor-preview .mdb-preview-wrapper #mdb {
+  min-height: 100%;
+}
+
+.mdb-theme-editor-container textarea {
+  flex: 1;
+  height: 0;
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  padding: 10px;
+  resize: none;
+}
+
+/* 设置标签导航 */
+.mdb-settings-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 10px;
+}
+
+.mdb-settings-nav button {
+  padding: 5px 15px;
+}
+
+.mdb-settings-nav button.active {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+/* 编辑器容器 */
+.mdb-editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 70vh;
+  max-height: 600px;
+  min-height: 400px;
+  margin-top: 20px;
+}
+
+.mdb-editor-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mdb-editor-section textarea {
+  flex: 1;
+  height: 0;
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  padding: 10px;
+  resize: none;
+}
+
+.mdb-editor-preview {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  padding: 20px;
+  background-color: var(--background-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.mdb-editor-preview > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mdb-preview-wrapper {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* 主题模式切换 */
+.mdb-view-preview-scroll.mdb-dark-mode {
+  /* background-color: #1e1e1f !important; */
+  color-scheme: dark !important;
+}
+
+.mdb-view-preview-scroll:not(.mdb-dark-mode) {
+  /* background-color: #ffffff !important; */
+  color-scheme: light !important;
+}
